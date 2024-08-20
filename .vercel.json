@@ -1,0 +1,25 @@
+{
+    "projects": {
+      "frontend": {
+        "root": "Duke-Game-Frontend",
+        "builds": [
+          { "src": "Duke-Game-Frontend/package.json", "use": "@vercel/static-build" }
+        ],
+        "routes": [
+          { "src": "/(.*)", "dest": "Duke-Game-Frontend/$1" }
+        ]
+      },
+      "backend": {
+        "root": "Duke-Game-Backend",
+        "functions": {
+          "api/**/*.js": {
+            "runtime": "nodejs14.x"
+          }
+        },
+        "routes": [
+          { "src": "/api/(.*)", "dest": "Duke-Game-Backend/api/$1" }
+        ]
+      }
+    }
+  }
+  
